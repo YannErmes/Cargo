@@ -1741,6 +1741,7 @@ SOFTWARE.
 --------------------------------------------------------------------------------
 animations
 flutter_shaders
+go_router
 path_provider
 path_provider_android
 path_provider_foundation
@@ -1813,6 +1814,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 --------------------------------------------------------------------------------
 args
+logging
 
 Copyright 2013, the Dart project authors. 
 
