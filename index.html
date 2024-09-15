@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -18,7 +18,7 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="Flutter cosmetic site.">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -29,10 +29,46 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <title>flutter_cosmetique_site</title>
+  <title>Flutter Cosmetique Site</title>
   <link rel="manifest" href="manifest.json">
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      height: 100vh;
+      width: 100vw;
+      background: linear-gradient(135deg, #ff0066, #00ccff, #ffcc00, #66ff66);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 0%; }
+      50% { background-position: 100% 100%; }
+      100% { background-position: 0% 0%; }
+    }
+
+    .main-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      opacity: 1;
+      transition: opacity 0.1s ease-out;
+    }
+
+    .main-content img {
+      max-width: 300px; /* Adjust the size of the image */
+      max-height: 300px;
+    }
+  </style>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+<div class="main-content" id="loader-content">
+  <img src="chg.gif" alt="App Logo"> <!-- Replace 'your-image.png' with the actual image path -->
+</div>
+<script src="flutter_bootstrap.js" async></script>
 </body>
 </html>
