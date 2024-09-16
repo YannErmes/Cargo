@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
   <base href="/">
 
   <meta charset="UTF-8">
@@ -59,15 +46,16 @@
       transition: opacity 0.1s ease-out;
     }
 
-    .main-content img {
-      max-width: 300px; /* Adjust the size of the image */
-      max-height: 300px;
+    .main-content h1 {
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      color: white;
     }
   </style>
 </head>
 <body>
 <div class="main-content" id="loader-content">
-  <img src="chg.gif" alt="App Logo"> <!-- Replace 'your-image.png' with the actual image path -->
+  <h1>Bienvenue sur le fé Store, le store en ligne de fé sneakers. Préparez-vous pour une expérience unique !</h1>
 </div>
 <script src="flutter_bootstrap.js" async></script>
 </body>
