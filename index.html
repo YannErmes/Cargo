@@ -1,62 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <base href="/">
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Flutter cosmetic site.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta charset="UTF-8">
-  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Flutter cosmetic site.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
 
-  <!-- iOS meta tags & icons -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="flutter_cosmetique_site">
-  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+    <title>Flutter Cosmetique Site</title>
+    <link rel="manifest" href="manifest.json">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            overflow: hidden;
+        }
 
-  <title>Flutter Cosmetique Site</title>
-  <link rel="manifest" href="manifest.json">
+        .main-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
 
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      height: 100vh;
-      width: 100vw;
-      background: linear-gradient(135deg, #ff0066, #00ccff, #ffcc00, #66ff66);
-      background-size: 400% 400%;
-      animation: gradientAnimation 10s ease infinite;
-    }
+        .hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
 
-    @keyframes gradientAnimation {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
+        .main-content img {
+            max-width: 900px;
+            max-height: 900px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-    .main-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      opacity: 1;
-      transition: opacity 0.1s ease-out;
-    }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Arial, sans-serif;
+            font-size: 28px;
+            color: white;
+            text-align: center;
+            font-weight: normal;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, opacity 0.1s ease-in-out;
+        }
 
-    .main-content h1 {
-      font-family: Arial, sans-serif;
-      font-size: 24px;
-      color: white;
-    }
-  </style>
+        .text-overlay.hidden {
+            transform: translate(-50%, -100%);
+            opacity: 0;
+        }
+    </style>
 </head>
 <body>
+
 <div class="main-content" id="loader-content">
-  <h1>Bienvenue sur le fé Store, le store en ligne de fé sneakers. Préparez-vous pour une expérience unique !</h1>
+    <img src="first.webp" alt="Welcome">
+    <div class="text-overlay" id="text-overlay">Bienvenue sur le fé Store, Vivez des moments extrêmes, Accrochez votre ceinture, le chargement a démarré.</div>
 </div>
+
 <script src="flutter_bootstrap.js" async></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const loaderContent = document.getElementById('loader-content');
+        const textOverlay = document.getElementById('text-overlay');
+
+        // Attendre que Flutter Web soit prêt
+        window.addEventListener('flutter-first-frame', function() {
+            // Masquer l'écran de chargement après l'initialisation de Flutter
+            loaderContent.classList.add('hidden');
+
+            // Faire partir le texte avec une animation
+            textOverlay.classList.add('hidden');
+        });
+    });
+</script>
 </body>
 </html>
