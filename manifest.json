@@ -1,6 +1,6 @@
 {
-    "name": "fesneakers",
-    "short_name": "fesneakers",
+    "name": "flutter_cosmetique_site",
+    "short_name": "flutter_cosmetique_site",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#hexcode",

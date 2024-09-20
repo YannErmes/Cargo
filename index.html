@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="Flutter cosmetic site.">
+    <meta name="description" content="Découvrez notre collection exclusive de sneakers pour des moments uniques. Fé Store vous propose une large gamme incontournable de modèles tendance.">
+    <meta name="keywords" content="fé store, fesneakers, shoes, baskets, drip ,sneakers">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="fé Store">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png"/>
 
-    <title>Flutter Cosmetique Site</title>
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="fé Store - Moments Extrêmes avec nos Sneakers">
+    <meta property="og:description" content="Découvrez une collection de sneakers authentiques pour des moments uniques. Explorez la gamme complète sur le  fé Store.">
+    <meta property="og:image" content="https://i.postimg.cc/gjpp2nKv/pexels-shyam-mishra-203327-13691725.jpg">
+    <meta property="og:url" content="https://fesneakers.store">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="fé Store - Moments Extrêmes avec nos Sneakers">
+    <meta name="twitter:description" content="Nos sneakers vous offrent des moments inoubliables. Découvrez la collection sur fé Store.">
+    <meta name="twitter:image" content="https://i.postimg.cc/xCJ8zJHh/pexels-kush-agrawal-1061861-13919027.jpg">
+
+    <title>fé Sneakers - The fairy choice</title>
     <link rel="manifest" href="manifest.json">
 
     <style>
@@ -20,7 +36,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #f0f0f0;
+            background: #0A0Y0KFF;
             overflow: hidden;
         }
 
@@ -72,23 +88,20 @@
 <body>
 
 <div class="main-content" id="loader-content">
-    <img src="first.jpg" alt="Welcome">
+    <img src="first.jpg" alt="Bienvenue sur le fé Store - Sneakers" loading="lazy">
     <div class="text-overlay" id="text-overlay">Bienvenue sur le fé Store, Vivez des moments extrêmes, Accrochez votre ceinture...</div>
 </div>
 
-<script src="flutter_bootstrap.js" async></script>
+<!-- Load Flutter with defer to improve performance -->
+<script src="flutter_bootstrap.js" defer></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const loaderContent = document.getElementById('loader-content');
         const textOverlay = document.getElementById('text-overlay');
 
-        // Attendre que Flutter Web soit prêt
         window.addEventListener('flutter-first-frame', function() {
-            // Masquer l'écran de chargement après l'initialisation de Flutter
             loaderContent.classList.add('hidden');
-
-            // Faire partir le texte avec une animation
             textOverlay.classList.add('hidden');
         });
     });
