@@ -48,3 +48,14 @@ void loop() {
         }
     }
 }
+
+
+
+SD Module	Arduino Uno
+VCC	5V
+GND	GND
+MISO	Pin 12
+MOSI	Pin 11
+SCK	Pin 13
+CS	Pin 10
+
